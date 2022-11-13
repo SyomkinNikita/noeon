@@ -1,0 +1,113 @@
+@import "src/mixins";
+
+.companyBlock {
+  margin-top: 776px;
+  @include smallDesktop {
+    margin-top: calc(767px + 35px);
+  }
+
+  &__contacts {
+    margin-top: 124px;
+    @include mediaIpadPro {
+      margin-top: 134px;
+    }
+    @include mediaMacbookPro {
+      margin-top: 206px;
+    }
+  }
+
+  &__footer {
+    margin-top: 271px;
+    @include mediaIpadPro {
+      margin-top: 184px;
+    }
+    @include mediaMacbookPro {
+      margin-top: 255px;
+    }
+
+    .text {
+      text-align: center;
+    }
+  }
+
+  &__heading {
+    @include title;
+    margin-bottom: 0;
+    margin-top: 103px;
+
+    @include mediaIpadPro {
+      margin-top: 89px;
+    }
+    @include mediaMacbookPro {
+      margin-top: 163px;
+    }
+  }
+}
+
+.companyTeam {
+  margin-top: 103px;
+
+  &__cardWrapper {
+    margin-top: 24px;
+    @include mediaIpadPro {
+      margin-top: 89px;
+    }
+    @include mediaMacbookPro {
+      margin-top: 50px;
+    }
+    @include mediaMacbookProLarge {
+      margin-top: 105px;
+    }
+  }
+}
+
+.company__step {
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+
+.company__step-wrapper {
+  width: 100%;
+
+  @include mediaMacbookPro {
+    width: 27%;
+  }
+  @include mediaMacbookProLarge {
+    max-width: 418px;
+  }
+}
+
+.ukraineBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 143px;
+
+  @include mediaIpadPro {
+    margin-top: 127px;
+  }
+  @include mediaMacbookPro {
+    margin-top: 186px;
+  }
+
+  &__flag {
+    width: 50px;
+    height: 24px;
+  }
+
+  &__blue {
+    height: 12px;
+    background-color: var(--color-blue);
+  }
+
+  &__yellow {
+    height: 12px;
+    background-color: var(--color-yellow);
+  }
+
+  &__supportText {
+    @include text;
+    text-align: center;
+    margin-top: 33px;
+  }
+}

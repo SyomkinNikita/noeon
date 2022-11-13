@@ -1,0 +1,36 @@
+.figureStep {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  &__wrapper-img {
+    height: 103px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  &__title {
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 30px;
+    letter-spacing: 0.37266549468040466px;
+    text-align: left;
+    color: var(--color-white-082);
+    margin: 24px 0;
+  }
+
+  &__text {
+    font-size: 25px;
+    font-weight: 300;
+    line-height: 30px;
+    letter-spacing: 0.37266549468040466px;
+    text-align: left;
+    color: var(--color-white-082);
+  }
+
+  &__figure {
+    width: 63px;
+  }
+
+}

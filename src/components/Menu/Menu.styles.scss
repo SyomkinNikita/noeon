@@ -1,0 +1,74 @@
+@import "src/mixins";
+
+.menu {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 6px 8px;
+  max-width: 453px;
+  margin: 19px auto 0;
+  gap: 24px 0;
+  background: rgba(18, 18, 18, 0.84);
+  backdrop-filter: blur(10px);
+  border-radius: 25px;
+  flex-wrap: wrap;
+
+  @include mediaIpadPro {
+    margin-left: auto;
+    margin-right: 0;
+    margin-top: 0;
+  }
+
+  &__wrapper {
+    z-index: 20;
+    position: relative;
+    display: flex;
+  }
+
+  &__content {
+    display: none;
+    @include mediaIpadPro {
+      display: block;
+      position: absolute;
+      left: 166px;
+      margin: 0;
+      max-width: 272px;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 120%;
+      letter-spacing: 0.372665px;
+      color: var(--color-white-082);
+    }
+    @include mediaMacbookPro {
+      font-size: 35px;
+      max-width: 488px;
+    }
+    @include mediaMacbookProLarge {
+      font-size: 45px;
+      max-width: 588px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    a {
+      color: var(--color-white-100);
+      text-decoration: none;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 18px;
+      padding: 10px 12px;
+      border-radius: 23px;
+      cursor: default;
+      white-space: nowrap;
+      transition: background-color var(--transition-linear), color var(--transition-linear);
+    }
+    &_active, &:hover {
+      a {
+        background-color: var(--color-white-094);
+        color: var(--color-black);
+      }
+    }
+  }
+}

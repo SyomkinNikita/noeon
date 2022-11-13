@@ -1,0 +1,60 @@
+@import "../../../../mixins";
+
+.blogReferences {
+  color: var(--color-white-100);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  overflow: hidden;
+
+  & a {
+    color: #A3A3A3;
+    font-size: 12px;
+    line-height: 150%;
+  }
+
+  @include columns(8);
+
+  @include smallDesktop {
+    @include columns(6);
+  }
+
+  &__shevron {
+    transform: rotate(0);
+    transition: transform ease-in-out 0.4s;
+    &_open {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 150%;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    @include smallDesktop {
+      font-size: 35px;
+    }
+    & svg {
+      margin-left: 16px;
+      cursor: pointer;
+    }
+  }
+  &__wrapper {
+    position: relative;
+    transition: height ease-in-out 0.4s;
+    display: flex;
+    flex-direction: column;
+
+    @include mediaMacbookProLarge {
+      flex-direction: row;
+      gap: 40px;
+    }
+
+    &_open {
+    }
+    &-item {}
+  }
+}

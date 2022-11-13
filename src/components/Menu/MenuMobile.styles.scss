@@ -1,0 +1,40 @@
+.mobileMenu {
+  height: 26px;
+  margin-left: auto;
+  &__iconWrapper {
+    background-color: transparent;
+    border: none;
+  }
+  &__menuItems {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 100%;
+    margin: 0;
+    padding: 0 32px;
+    background-color: var(--color-black);
+    z-index: 100;
+    transition: left ease-in-out 0.3s;
+    li {
+      list-style-type: none;
+    }
+    a {
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 25px;
+      line-height: 150%;
+    }
+    &_open {
+      left: 0;
+    }
+  }
+  &__closeIcon {
+    margin-left: auto;
+    margin-top: 32px;
+    margin-bottom: 56px;
+  }
+}

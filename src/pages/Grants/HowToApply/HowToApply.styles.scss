@@ -1,0 +1,146 @@
+@import "src/mixins";
+
+.howToApply {
+  background-color: var(--color-gray);
+  padding-top: 116px;
+  padding-bottom: 150px;
+  margin-top: 28px;
+
+  @include mediaIpadPro {
+    margin-top: 155px;
+  }
+
+  @include mediaMacbookPro {
+    margin-top: 235px;
+  }
+
+  &__title {
+    margin: 0;
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 120%;
+    color: var(--color-black-082);
+    text-align: center;
+
+    @include mediaIpadPro {
+      font-size: 75px;
+    }
+  }
+  &__wrapper {
+    margin-top: 82px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+
+    @include mediaMacbookPro {
+      padding-left: 184px;
+    }
+  }
+  &__step {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 26px;
+    &-number {
+      font-weight: 700;
+      font-size: 175px;
+      line-height: 120%;
+      color: var(--color-black-082);
+    }
+    &-header {
+      font-weight: 700;
+      font-size: 35px;
+      line-height: 120%;
+      color: var(--color-black-082);
+    }
+    &-text {
+      margin: 0;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 120%;
+      color: var(--color-black-082);
+    }
+
+    &_one {
+      position: relative;
+      .howToApply__step-text {
+        @include mediaIpadPro {
+          max-width: 478px;
+        }
+        @include mediaMacbookPro {
+          max-width: 660px;
+        }
+      }
+      .howToApply__step-number {
+        position: relative;
+        &:before {
+          display: none;
+          @include mediaIpadPro {
+            content: url("../lines-step-one-smallDesktop.png");
+            position: absolute;
+            left: 100%;
+            top: 130%;
+            transform: translateY(-50%);
+            display: block;
+          }
+          @include mediaMacbookPro {
+            content: url("../lines-step-one-bigDesktop.png");
+          }
+          @include mediaMacbookProLarge {
+            left: 130%;
+          }
+        }
+      }
+    }
+    &_two {
+      @include mediaIpadPro {
+        margin-left: 53%;
+      }
+      @include smallDesktop {
+        margin-left: 46%;
+      }
+      @include mediaMacbookPro {
+        margin-left: auto;
+      }
+      @include mediaMacbookProLarge {
+        margin-left: 55%;
+      }
+      @include mediaMacbookProLarge {
+        margin-left: 60%;
+      }
+
+      .howToApply__step-text {
+        @include mediaIpadPro {
+          max-width: 292px;
+        }
+      }
+      .howToApply__step-number {
+        position: relative;
+        &:after {
+          display: none;
+          @include mediaIpadPro {
+            content: url("../lines-step-two-smallDesktop.png");
+            position: absolute;
+            right: 125%;
+            top: 130%;
+            transform: translateY(-50%);
+            display: block;
+          }
+          @include mediaMacbookPro {
+            content: url("../lines-step-two-bigDesktop.png");
+          }
+        }
+      }
+    }
+    &_three {
+      .howToApply__step-text {
+        @include mediaIpadPro {
+          max-width: 344px;
+        }
+      }
+      @include mediaMacbookPro {
+        margin-left: 16%;
+      }
+    }
+  }
+}

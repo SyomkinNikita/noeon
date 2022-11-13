@@ -1,0 +1,93 @@
+$columns: 12;
+
+$xxs: 320px;
+$xs: 390px;
+$sm: 768px;
+$md: 1024px;
+$lg: 1280px;
+$xl: 1768px;
+
+$breakpoints: (
+        xxs: $xxs,
+        xs: $xs,
+        sm: $sm,
+        md: $md,
+        lg: $lg,
+        xl: $xl
+);
+
+@mixin create-selectors($breakpoint: null) {
+  $infix: if($breakpoint == null, '', '-#{$breakpoint}');
+
+  @for $i from 1 through $columns {
+    .col#{$infix}-#{$i} {
+      grid-column-end: span $i;
+    }
+  }
+}
+
+@mixin text {
+  font-size: 18px;
+  line-height: 120%;
+  letter-spacing: 0.372665px;
+  color: var(--color-white-082);
+
+  @media screen and (min-width: 1024px) {
+    font-size: 25px;
+  }
+
+}
+
+@mixin title {
+  font-weight: 700;
+  font-size: 55px;
+  line-height: 120%;
+  letter-spacing: 0.372665px;
+  margin-top: 0;
+  color: var(--color-white-082);
+  @media screen and (min-width: 1024px) {
+    font-size: 75px;
+  }
+}
+
+@mixin mediaIpadPro {
+  @media screen and (min-width: $sm) {
+    @content
+  }
+}
+
+@mixin smallDesktop {
+  @media screen and (min-width: $md) {
+    @content
+  }
+}
+
+@mixin mediaMacbookPro {
+  @media screen and (min-width: $lg) {
+    @content
+  }
+}
+
+@mixin mediaMacbookProLarge {
+  @media screen and (min-width: $xl) {
+    @content
+  }
+}
+
+@mixin button-link {
+  text-decoration: none;
+  border: 2px solid var(--color-white-100);
+  width: auto;
+  padding: 21px 28px;
+  text-align: center;
+  transition: all ease-in-out 0.3s;
+
+  &:hover {
+    background-color: var(--color-white-100);
+    color: var(--color-black);
+  }
+}
+
+@mixin columns($col) {
+  grid-column-end: span $col;
+}

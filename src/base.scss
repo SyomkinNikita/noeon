@@ -1,0 +1,37 @@
+@import "mixins";
+
+@font-face {
+  font-family: "elevon";
+  src: url("https://use.typekit.net/af/b70d0f/00000000000000007735b18e/30/l?subset_id=2&fvd=n2&v=3") format("woff2"), url("https://use.typekit.net/af/b70d0f/00000000000000007735b18e/30/d?subset_id=2&fvd=n2&v=3") format("woff"), url("https://use.typekit.net/af/b70d0f/00000000000000007735b18e/30/a?subset_id=2&fvd=n2&v=3") format("opentype");
+  font-display: auto;
+  font-style: normal;
+  font-weight: 200;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "elevon";
+  src: url("https://use.typekit.net/af/dfe794/00000000000000007735b190/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3") format("woff2"), url("https://use.typekit.net/af/dfe794/00000000000000007735b190/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3") format("woff"), url("https://use.typekit.net/af/dfe794/00000000000000007735b190/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3") format("opentype");
+  font-display: auto;
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: normal;
+}
+
+a {
+  @include text
+}
+
+.title {
+  @include title
+}
+
+.text {
+  @include text
+}
+
+@each $breakpoint, $width in $breakpoints {
+  @media (min-width: $width) {
+    @include create-selectors($breakpoint);
+  }
+}

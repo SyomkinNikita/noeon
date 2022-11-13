@@ -1,0 +1,540 @@
+@import 'src/mixins';
+
+@mixin list {
+  ol,
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 0 0 0 21px;
+    font-size: 18px;
+    line-height: 150%;
+
+    @include mediaIpadPro {
+      max-width: 680px;
+    }
+
+    @include mediaMacbookProLarge {
+      margin-left: 48px;
+      max-width: max-content;
+    }
+
+    li {
+      p {
+        margin: 0;
+      }
+    }
+  }
+  ul {
+    font-size: 18px;
+    line-height: 150%;
+    list-style-type: none;
+    li {
+      position: relative;
+      &:before {
+        content: url('./assets/ellipseForList.png');
+        position: absolute;
+        left: -28px;
+      }
+    }
+  }
+}
+
+.navigation {
+  margin-bottom: 64px;
+
+  @include mediaMacbookProLarge {
+    margin-bottom: 56px;
+  }
+
+  & a {
+    text-decoration: none;
+    color: #454545;
+  }
+
+  strong {
+    color: white;
+  }
+
+  &__link {
+    font-size: 18px;
+    line-height: 150%;
+    text-decoration: none;
+  }
+}
+
+.firstBlockJob {
+  display: flex;
+  flex-direction: column-reverse;
+
+  @include mediaMacbookPro {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  &__flexForMobile {
+    display: flex;
+    flex-direction: column-reverse;
+
+    @include mediaMacbookPro {
+      flex-direction: column;
+    }
+  }
+  &__row {
+    display: flex;
+    flex-direction: column;
+
+    @include mediaIpadPro {
+      flex-direction: row;
+    }
+
+    @include mediaMacbookPro {
+      margin-top: 0;
+      flex-direction: column;
+      width: auto;
+    }
+   
+    &-second {
+      @include mediaMacbookPro {
+        width: calc(100% - 624px);
+      }
+
+     
+    }
+  }
+}
+
+.details {
+  @include mediaIpadPro {
+    width: 50%;
+  }
+  @include mediaMacbookPro {
+    max-width: 400px;
+    width: auto;
+  }
+
+  &__title {
+    color: white;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 150%;
+    margin-top: 0;
+    margin-bottom: 32px;
+
+    @include mediaIpadPro {
+      font-size: 35px;
+      line-height: 150%;
+    }
+  }
+
+  &__text {
+    color: white;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+
+    & > p {
+      margin-bottom: 16px;
+    }
+  }
+}
+
+.keywords {
+  color: white;
+
+  @include mediaIpadPro {
+    width: 50%;
+  }
+
+  @include mediaMacbookPro {
+    margin-top: 124px;
+    max-width: 400px;
+    width: auto;
+  }
+
+  &__title {
+    margin-top: 0;
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 150%;
+  }
+
+  &__text {
+    font-size: 18px;
+    line-height: 150%;
+  }
+}
+
+.pictureBlock {
+  position: relative;
+  margin-bottom: 56px;
+
+  img {
+    // TODO: class
+    object-fit: cover;
+    height: 384px;
+    width: 100%;
+  }
+
+  @include mediaMacbookPro {
+    margin-bottom: 0;
+  }
+
+  & .logo-wrapper {
+    top: 42px;
+    margin-left: 24px;
+
+    @include mediaIpadPro {
+      margin-left: 42px;
+    }
+
+    & .logo-noeon {
+      font-size: 35px;
+      letter-spacing: .8em;
+      margin-left: 0;
+    }
+
+    & .logo-research {
+      font-size: 18pt;
+    }
+  }
+
+  & .logo-wrapper {
+    &_hidden {
+      display: flex;
+    }
+  }
+}
+
+.blockUnderImage {
+  color: white;
+
+  &__title {
+    font-size: 32px;
+    line-height: 150%;
+    margin-bottom: 36px;
+
+    @include mediaMacbookPro {
+      font-weight: 700;
+      font-size: 55px;
+      line-height: 150%;
+      margin-top: 80px;
+      margin-bottom: 16px;
+    }
+  }
+
+  &__subtitle {
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 150%;
+    margin-bottom: 16px;
+    margin-top: 0;
+
+    @include mediaMacbookPro {
+      font-size: 35px;
+      line-height: 150%;
+      margin-bottom: 24px;
+    }
+  }
+
+  &__text {
+    @include mediaMacbookPro {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 150%;
+    }
+  }
+}
+
+.blockLookingFor {
+  margin-top: 88px;
+
+  @include mediaIpadPro {
+    margin-top: 72px;
+  }
+
+  @include mediaMacbookProLarge {
+    margin-top: 320px;
+  }
+  &__heading {
+    color: white;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 150%;
+
+    @include mediaIpadPro {
+      font-size: 75px;
+      line-height: 150%;
+      text-align: center;
+    }
+
+    @include mediaMacbookPro {
+      font-size: 75px;
+      line-height: 150%;
+      text-align: start;
+    }
+  }
+
+  &__step {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 64px;
+
+    @include mediaIpadPro {
+      margin-bottom: 104px;
+    }
+
+    @include mediaMacbookPro {
+      flex-direction: row;
+      column-gap: 252px;
+      margin-bottom: 320px;
+    }
+
+    &-left {
+      display: flex;
+      flex-direction: column;
+
+      @include mediaIpadPro {
+        max-width: 470px;
+      }
+
+      @include mediaMacbookPro {
+        min-width: 470px;
+      }
+    }
+
+    &-number {
+      font-weight: 700;
+      font-size: 175px;
+      line-height: 120%;
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    &-header {
+      font-weight: 700;
+      font-size: 25px;
+      line-height: 150%;
+      color: white;
+
+      &:after {
+        content: url('./assets/arrow.png');
+        transform: rotate(90deg);
+        position: relative;
+        left: 20px;
+        display: inline-block;
+      }
+
+      @include mediaIpadPro {
+        font-size: 35px;
+        line-height: 150%;
+      }
+
+      @include mediaMacbookPro {
+        font-size: 35px;
+        line-height: 150%;
+
+        &:after {
+          content: url('./assets/arrow.png');
+          transform: none;
+          position: relative;
+          left: 20px;
+        }
+      }
+    }
+
+    &-right {
+      color: white;
+      @include list;
+
+      @include mediaMacbookPro {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+}
+
+.blockWouldLike {
+  display: flex;
+  flex-direction: column;
+
+  @include mediaMacbookPro {
+    flex-direction: row;
+    gap: 64px;
+  }
+
+  &__header {
+    margin-top: 0;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 150%;
+    color: white;
+    margin-bottom: 48px;
+
+    &:after {
+      content: url('./assets/big-arrow.png');
+      transform: rotate(90deg);
+      position: relative;
+      left: 20px;
+      display: inline-block;
+    }
+
+    @include mediaIpadPro {
+      font-size: 75px;
+      line-height: 150%;
+      margin-bottom: 88px;
+    }
+
+    @include mediaMacbookPro {
+      max-width: 597px;
+      margin-bottom: 0;
+
+      &:after {
+        content: url('./assets/big-arrow.png');
+        transform: none;
+        position: relative;
+        left: 20px;
+      }
+    }
+  }
+
+  &__list {
+    color: white;
+    @include list;
+    p {
+      white-space: pre-wrap;
+    }
+  }
+}
+
+.howToDifferent {
+  background-color: var(--color-gray);
+  padding-top: 116px;
+  padding-bottom: 150px;
+  margin-top: 28px;
+  margin-bottom: 80px;
+
+  @include mediaIpadPro {
+    margin-top: 152px;
+  }
+
+  @include mediaMacbookProLarge {
+    margin-top: 600px;
+    padding-bottom: 400px;
+  }
+
+  &__header {
+    margin-top: 0;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 150%;
+    color: black;
+    text-align: center;
+
+    @include mediaIpadPro {
+      font-size: 75px;
+      line-height: 150%;
+    }
+
+    @include mediaMacbookPro {
+      margin-bottom: 228px;
+    }
+  }
+
+  &__textBlock {
+    display: flex;
+    flex-direction: column;
+    color: black;
+    align-items: center;
+
+    @include mediaMacbookPro {
+      flex-direction: row;
+      justify-content: space-around;
+    }
+
+    &-title {
+      font-weight: 700;
+      font-size: 25px;
+      line-height: 150%;
+      margin-bottom: 24px;
+
+      @include mediaIpadPro {
+        font-size: 35px;
+        line-height: 150%;
+      }
+    }
+
+    &-text {
+      font-size: 18px;
+      line-height: 150%;
+    }
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 56px;
+    margin-left: 32px;
+    margin-right: 32px;
+
+    @include mediaIpadPro {
+      width: 365px;
+      margin-bottom: 116px;
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    @include mediaMacbookProLarge {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.offering {
+  &__heading {
+    color: white;
+    margin-top: 56px;
+    margin-bottom: 24px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 150%;
+
+    @include mediaIpadPro {
+      font-size: 75px;
+      line-height: 150%;
+      margin-bottom: 72px;
+    }
+
+    @include mediaMacbookProLarge {
+      margin-bottom: 192px;
+    }
+  }
+
+  &__imageBlock {
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 444px;
+    }
+  }
+}
+
+.figureStepBlock {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 170px 0;
+  margin-top: 180px;
+
+  &__item {
+    width: 100%;
+    @include mediaIpadPro {
+      max-width: 40%;
+    }
+    @include mediaMacbookPro {
+      max-width: 30%;
+    }
+  }
+}

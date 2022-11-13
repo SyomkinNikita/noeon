@@ -1,0 +1,31 @@
+@import "../../../../mixins";
+
+.blogList {
+  color: var(--color-white-100);
+  font-size: 18px;
+  line-height: 150%;
+
+  ol, ul {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 0 0 0 21px;
+
+    @include mediaMacbookProLarge {
+      margin-left: 48px;
+    }
+
+    li {}
+  }
+  ul {
+    list-style-type: none;
+    li {
+      position: relative;
+      &:before {
+        content: url("../../assets/bullet-ellipse.png");
+        position: absolute;
+        left: -28px;
+      }
+    }
+  }
+}

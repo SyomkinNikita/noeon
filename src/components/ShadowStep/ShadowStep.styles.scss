@@ -1,0 +1,21 @@
+.shadowStep {
+  &__number {
+    text-shadow: 0 0 3px var(--color-white-100);
+    font-weight: 700;
+    font-size: 175px;
+    line-height: 120%;
+    color: var(--color-background);
+  }
+  &__title {
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 120%;
+    color: var(--color-white-082);
+  }
+  &__text {
+    font-weight: 300;
+    font-size: 25px;
+    line-height: 120%;
+    color: var(--color-white-082);
+  }
+}

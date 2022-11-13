@@ -1,0 +1,55 @@
+@import "src/mixins";
+
+.bannerBlock {
+  margin: 150px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 62px;
+  @include mediaIpadPro {
+    margin-bottom: 194px;
+  }
+
+  &__logo {
+    @include mediaIpadPro {
+      display: none;
+    }
+  }
+  &__img {
+    width: 100%;
+    max-width: 201px;
+    @include mediaIpadPro {
+      max-width: 440px;
+    }
+    @include mediaMacbookPro {
+      max-width: 303px;
+      margin-left: 45%;
+    }
+  }
+  &__button {
+    background-color: transparent;
+    border: 3px solid var(--color-white-100);
+    border-radius: 50%;
+    display: flex;
+    width: 55px;
+    height: 55px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    @include mediaIpadPro {
+      width: 92px;
+      height: 92px;
+    }
+    & > svg:first-child {
+      @include mediaIpadPro {
+        display: none;
+      }
+    }
+    & > svg:last-child {
+      display: none;
+      @include mediaIpadPro {
+        display: block;
+      }
+    }
+  }
+}

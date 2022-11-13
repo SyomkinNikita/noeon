@@ -1,0 +1,13 @@
+@import "src/mixins";
+
+.grantsForm {
+  margin-top: 197px;
+
+  @include mediaIpadPro {
+    margin-top: 217px;
+  }
+
+  @include mediaMacbookPro {
+    margin-top: 289px;
+  }
+}

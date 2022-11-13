@@ -1,0 +1,27 @@
+@import "src/mixins";
+
+.blogPost {
+  &__menu {
+    &-wrapper {
+      display: none;
+
+      @include mediaMacbookProLarge {
+        display: block;
+        //float: left;
+        position: sticky;
+        top: 40px;
+
+        grid-area: menu
+      }
+    }
+  }
+
+  &__grid {
+    @include mediaMacbookProLarge {
+      display: grid;
+      grid-template-areas: 'menu content';
+      grid-template-columns: 150px max-content;
+      grid-column-gap: 189px;
+    }
+  }
+}

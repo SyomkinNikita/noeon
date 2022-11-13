@@ -1,0 +1,15 @@
+@import "src/mixins";
+
+.footer {
+  margin-top: 271px;
+  @include mediaIpadPro {
+    margin-top: 184px;
+  }
+  @include mediaMacbookPro {
+    margin-top: 255px;
+  }
+
+  .text {
+    text-align: center;
+  }
+}

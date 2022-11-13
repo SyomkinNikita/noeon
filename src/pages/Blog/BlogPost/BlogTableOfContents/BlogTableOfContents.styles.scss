@@ -1,0 +1,37 @@
+@import "../../../../mixins";
+
+.blogTableOfContents {
+  color: var(--color-white-100);
+  margin: 24px 0 0 21px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  &__title {
+    @include text;
+    color: var(--color-white-100);
+    margin: 32px 0 0;
+
+    @include smallDesktop {
+      font-size: 18px;
+    }
+  }
+  &__item {
+    @include text;
+    color: #444444;
+    transition: color ease-in-out 0.2s;
+    cursor: pointer;
+    &:hover {
+      color: var(--color-white-100);
+    }
+    &_active {
+      @include mediaMacbookProLarge {
+        color: var(--color-white-100);
+      }
+    }
+
+    @include smallDesktop {
+      font-size: 18px;
+    }
+  }
+}

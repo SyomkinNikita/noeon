@@ -1,0 +1,32 @@
+@import 'src/mixins';
+
+.fullBanner {
+  width: 100%;
+  margin-top: 112px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  max-height: 566px;
+
+  @include mediaIpadPro {
+    max-height: 573px;
+  }
+
+  img {
+    width: 100%;
+    height: 566px;
+    object-fit: cover;
+    @include mediaMacbookPro {
+      height: 573px;
+    }
+  }
+
+  &_withMargin {
+    max-height: 767px;
+    margin-top: 0;
+
+    & img {
+      height: 767px;
+    }
+  }
+}

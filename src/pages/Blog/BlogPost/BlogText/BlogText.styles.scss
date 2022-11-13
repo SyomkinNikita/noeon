@@ -1,0 +1,19 @@
+@import "src/mixins";
+
+.blogText {
+  color: var(--color-white-100);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+
+  &__title {
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 150%;
+    color: var(--color-white-100);
+
+    @include smallDesktop {
+      font-size: 35px;
+    }
+  }
+}

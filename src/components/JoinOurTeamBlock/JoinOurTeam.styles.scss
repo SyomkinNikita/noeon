@@ -1,0 +1,58 @@
+@import 'src/mixins';
+
+.joinOurTeam {
+  margin-top: 155px;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 66px;
+
+  @include smallDesktop {
+    flex-direction: row;
+    gap: 20px;
+  }
+  @include mediaMacbookPro {
+    gap: 117px;
+  }
+
+  &__content {
+  }
+
+  &__img {
+    width: 100%;
+
+    @include smallDesktop {
+      max-width: 412px;
+    }
+
+    @include mediaMacbookPro {
+      max-width: 520px;
+    }
+    @include mediaMacbookProLarge {
+      max-width: 720px;
+    }
+  }
+
+  &__title {
+    @include title;
+  }
+
+  &__text {
+    @include text;
+
+    span {
+      margin-top: 28px;
+      display: block;
+      font-weight: 700;
+
+      a {
+        @include text;
+      }
+    }
+  }
+
+  &__address {
+    @include text;
+    text-align: center;
+    margin-top: 55px;
+  }
+}

@@ -1,0 +1,12 @@
+@import "src/mixins";
+
+.blogDate {
+  @include text;
+  color: var(--color-white-100);
+
+  @include smallDesktop {
+    font-size: 18px;
+  }
+
+
+}

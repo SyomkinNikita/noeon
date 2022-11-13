@@ -1,0 +1,90 @@
+@import 'src/mixins';
+
+.research {
+  margin-top: 194px;
+  @include mediaIpadPro {
+    margin-top: 136px;
+  }
+
+  &__title {
+    @include title;
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    @include text;
+    font-weight: 300;
+    @include mediaMacbookPro {
+      max-width: 1100px;
+    }
+  }
+
+  &__steps {
+    margin-top: 127px;
+    display: flex;
+    flex-direction: column;
+    gap: 104px;
+    align-items: center;
+
+    @include smallDesktop {
+      margin-top: 125px;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      gap: 56px 0;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    @include mediaMacbookPro {
+      justify-content: space-between;
+      gap: 194px 0;
+      align-items: flex-start;
+      max-width: 85%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    &__wrapper {
+      max-width: 276px;
+      position: relative;
+      &::after {
+        content: "";
+        width: 1px;
+        background-color: var(--color-white-100);
+        height: calc(100% - 42px - 55px);
+        position: absolute;
+        left: 50%;
+        top: calc(100% + 21px);
+        transform: translateX(-50%);
+
+        @include smallDesktop {
+          top: 25%;
+          transform: translateY(-50%);
+          left: calc(100% - 62px);
+          height: 1px;
+          width: calc(100% - 92px - 53px);
+        }
+
+        @include mediaMacbookPro {
+          width: calc(100% - 30px);
+          left: calc(100% - 76px);
+        }
+
+        @include mediaMacbookProLarge {
+          width: calc(100% + 50% - 62px);
+          left: calc(100% - 50% + 66px);
+        }
+      }
+      
+      &:last-child {
+        &::after {
+          display: none;
+        }
+      }
+      
+      @include mediaIpadPro {
+        width: 276px;
+      }
+    }
+  }
+}
