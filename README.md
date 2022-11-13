@@ -1,3 +1,3 @@
 # noeon
 
-<a href="https://noeon.ai/" target="blank">Ссылка на сайт</a>
+<a href="https://noeon.ai/" target="blank">noeon site</a>
